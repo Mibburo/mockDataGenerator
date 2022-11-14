@@ -1,7 +1,7 @@
 version: '2'
 services:
   palaemon-srap-data-generation:
-    image:  mibburo/palaemon-srap-data-generation:palaemon-srap-data-generation
+    image:  endimion13/srap-mock-generator:0.0.1a 
     environment:
       - DFB_URI=dfb.palaemon.itml.gr
       - DFB_PORT=443
@@ -15,8 +15,7 @@ services:
       - PUBLIC_ENCRYPTION_KEY_PATH=/store/public.key
       - PRIVATE_ENCRYPTION_KEY_PATH=/store/private.key
     volumes:
-      - /home/user/wsmsg/certs/:/store
-    expose:
-      - 7050
+      - /home/ni/code/java/palaemon-db-proxy/:/store
+      - /home/ni/code/java/palaemon.conductor/:/store/keys
     ports:
-      - 7050:7050
+      - 8082:8083

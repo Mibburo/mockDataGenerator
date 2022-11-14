@@ -26,4 +26,5 @@ public class LegacySystem {
     private String statusWay;
     private String proximityAssistance;
     private String navigationalSystem;
+    private String deck;
 }

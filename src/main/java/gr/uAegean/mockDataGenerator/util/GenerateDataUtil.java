@@ -27,11 +27,12 @@ public class GenerateDataUtil {
         return legacySystem;
     }
 
-    public static LegacySystem generateLegacySystemHazard(String hazard, String statusPa, String statusWay){
+    public static LegacySystem generateLegacySystemHazard(String hazard, String statusPa, String statusWay, String deck){
         LegacySystem legacySystem = new LegacySystem();
         legacySystem.setPresenceHazards(hazard);
         legacySystem.setStatusPA(statusPa);
         legacySystem.setStatusWay(statusWay);
+        legacySystem.setDeck(deck);
 
         return legacySystem;
     }
@@ -51,7 +52,7 @@ public class GenerateDataUtil {
         return legacySystem;
     }
 
-    public static EvacuationCoordinator generateEvacuationCoordinator(String originator, String status, String timestamp){
+    public static EvacuationCoordinator generateEvacuationCoordinator(String originator, int status, String timestamp){
         EvacuationCoordinator evacCoordinator = new EvacuationCoordinator();
         evacCoordinator.setOriginator(originator);
         evacCoordinator.setEvacStatus(status);
@@ -81,6 +82,10 @@ public class GenerateDataUtil {
         return camera;
     }
 
+    /*
+
+
+ */
     public static StabilityToolkit generateStabilityToolkit(){
         StabilityToolkit stabilityToolkit = new StabilityToolkit();
         stabilityToolkit.setState("0");
@@ -101,10 +106,11 @@ public class GenerateDataUtil {
         return stabilityToolkit;
     }
 
+
     public static ShmAlarm generateShmAlarm(){
         ShmAlarm shmAlarm = new ShmAlarm();
         shmAlarm.setTimestamp(DateUtil.dateToString(LocalDateTime.now()));
-        shmAlarm.setType("grounding");
+        shmAlarm.setType("'Grounding'");
         shmAlarm.setComponentId("shm_01");
         shmAlarm.setAccelerometerX("0.1");
         shmAlarm.setAccelerometerY("-0.0");
@@ -140,7 +146,7 @@ public class GenerateDataUtil {
         weather.setVisKm("24.135");
         weather.setWavesDirectionDegrees("173.89");
         weather.setWavesPeriod("3.9");
-        weather.setWavesSWHMeters("1.06");
+        weather.setWavesSWHMeters("3");
         weather.setWindDirectionDegrees("204.63");
         weather.setWindSpeedKnots("22.20048");
 
